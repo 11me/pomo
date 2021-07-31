@@ -73,9 +73,6 @@ func (pomo *Pomo) Stop() {
 // it accepts time.Duration parsable format.
 func (pomo *Pomo) SetDuration(d time.Duration) {
 
-	// change notified status when duration is changed
-	pomo.Notified = false
-
 	// if pomo is running
 	if pomo.Status == ON {
 
@@ -87,6 +84,9 @@ func (pomo *Pomo) SetDuration(d time.Duration) {
 	}
 
 	pomo.Time = d
+
+	// change notified status when duration is changed
+	pomo.Notified = false
 }
 
 // GetDuration returns the current duration.
