@@ -65,6 +65,7 @@ func (pomo *Pomo) Stop() {
 
 	if pomo.Status == ON {
 		pomo.Cancel <- true
+		pomo.Time = DEFAULT_DURATION
 	}
 
 }
